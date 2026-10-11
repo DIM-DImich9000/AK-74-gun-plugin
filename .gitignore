@@ -1,0 +1,64 @@
+# ===== Maven =====
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ===== Java =====
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+
+# ===== IntelliJ IDEA =====
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+
+# ===== Eclipse =====
+.classpath
+.project
+.settings/
+bin/
+tmp/
+.metadata/
+
+# ===== NetBeans =====
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# ===== VS Code =====
+.vscode/
+
+# ===== Логи =====
+*.log
+logs/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ===== Переменные окружения и секреты =====
+.env
+*.env
+application-local.properties
+application-secret.properties

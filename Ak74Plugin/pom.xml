@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ====== Координаты проекта ====== -->
+    <groupId>com.example</groupId>
+    <artifactId>Ak74Plugin</artifactId>
+    <version>1.2.0</version>
+    <packaging>jar</packaging>
+
+    <name>Ak74Plugin</name>
+    <description>AK-74 с очередью, умной перезарядкой и крафтом для Purpur 26.3</description>
+
+    <!-- ====== Свойства ====== -->
+    <properties>
+        <!-- Java 25 — обязательное требование Minecraft 26.3 -->
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Версия Paper API: диапазон, Maven сам подставит последний билд 26.3 -->
+        <paper.api.version>[26.3.build,)</paper.api.version>
+    </properties>
+
+    <!-- ====== Репозитории ====== -->
+    <repositories>
+        <!-- Основной репозиторий PaperMC -->
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+
+        <!-- Репозиторий Purpur (на случай, если понадобится purpur-api) -->
+        <repository>
+            <id>purpur</id>
+            <url>https://repo.purpurmc.org/snapshots</url>
+        </repository>
+    </repositories>
+
+    <!-- ====== Зависимости ====== -->
+    <dependencies>
+        <!-- Paper API (совместим и с Purpur — он drop-in замена Paper) -->
+        <dependency>
+            <groupId>io.papermc.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>${paper.api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- ====== Сборка ====== -->
+    <build>
+        <finalName>Ak74Plugin-${project.version}</finalName>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <!-- Компилятор Java 25 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>25</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
